@@ -1,0 +1,22 @@
+<div class="auth-container">
+  <div class="toggle-buttons">
+    <button (click)="toggleView('login')" [class.active]="isLoginView">Login</button>
+    <button (click)="toggleView('register')" [class.active]="!isLoginView">Register</button>
+  </div>
+
+  <form *ngIf="isLoginView" [formGroup]="loginForm" (ngSubmit)="onSubmit('login')">
+    <h2>Login</h2>
+    <label for="login-email">Username:</label>
+    <input id="login-email" formControlName="username" type="text" />
+    <label for="login-password">Password:</label>
+    <input id="login-password" formControlName="password" type="password" />
+    <button type="submit">Login</button>
+  </form>
+
+  <form *ngIf="!isLoginView" [formGroup]="registerForm" (ngSubmit)="onSubmit('register')">
+    <h2>Register</h2>
+    <label for="register-email">Username:</label>
+    <input id="register-email" formControlName="username" type="text" />
+    <button type="submit">Register</button>
+  </form>
+</div>

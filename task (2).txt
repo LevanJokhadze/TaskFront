@@ -1,0 +1,15 @@
+front:
+1. User Input/ unique error handlers
+2. auth - send links password error handlers
+3. Token for 1 minute
+4. student list name/lastname/idnumber
+5. update/store/word 1 form
+6. progress bar
+
+CSS /
+back:
+1. Registration/Auth
+2. Email Verification - Send Password
+3. Token for 1 minute
+4. jobs for update
+5. 

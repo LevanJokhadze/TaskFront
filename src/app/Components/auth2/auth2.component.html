@@ -1,0 +1,9 @@
+<form [formGroup]="passwordForm" (ngSubmit)="onSubmit('registerPassword')">
+  <h2>Register Password</h2>
+  <label for="register-email">Password:</label>
+  <input id="register-email" formControlName="password" type="text" />
+
+  <label for="register-email">Repeat Password:</label>
+  <input id="register-email" formControlName="confirmPassword" type="text" />
+  <button type="submit">Finish</button>
+</form>
