@@ -1,0 +1,15 @@
+<form [formGroup]="uploadStudent" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    <h2>Register Student</h2>
+  
+    <label for="name">Name:</label>
+    <input id="name" formControlName="name" type="text" />
+  
+    <label for="name">Last Name:</label>
+    <input id="lastName" formControlName="last_name" type="text" />
+    
+    <label for="ID">ID:</label>
+    <input id="ID" formControlName="id" type="text" />
+    
+    <button type="submit">Add</button>
+  </form>
+  

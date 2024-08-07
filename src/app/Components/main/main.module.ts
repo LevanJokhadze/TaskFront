@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
-import { Auth2Component } from './auth2.component';
+import { MainComponent } from './main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
-  { path: ':token', component: Auth2Component }
+  { path: '', component: MainComponent }
 ];
 
 @NgModule({
 
   declarations: [
-    Auth2Component
+    MainComponent
   ],
   imports: [
     SharedModule,
@@ -25,4 +25,4 @@ const routes: Routes = [
   providers: [
   ],
 })
-export class Auth2Module { }
+export class MainModule { }
