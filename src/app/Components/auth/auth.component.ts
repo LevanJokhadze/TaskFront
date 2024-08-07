@@ -1,4 +1,4 @@
-import { OnInit, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 import { TokenService } from '../../services/token.service';
@@ -16,12 +16,16 @@ export class AuthComponent {
   token: string;
 
   ngOnInit() {
-    let token = localStorage.getItem('Token');
-    if (token) {
-      this.router.navigate(['/home']);
-      console.log(token);
+    if (typeof window !== 'undefined' && window.localStorage) {
+      let token = localStorage.getItem('Token');
+      if (token) {
+        this.router.navigate(['/home']);
+        console.log(token);
+      } else {
+        console.log("No token found");
+      }
     } else {
-      console.log("token");
+      console.log("localStorage is not available");
     }
   }
 
@@ -70,7 +74,7 @@ export class AuthComponent {
           console.log('Token has been removed from localStorage');
         }, 60000);
         this.router.navigate(['/home']);
-        
+
       } catch (error) {
         console.log(this.loginForm.value);
         console.error('Login Error:', error);

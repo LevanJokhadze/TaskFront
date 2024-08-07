@@ -1,15 +1,32 @@
 <form [formGroup]="uploadStudent" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
     <h2>Register Student</h2>
-  
+
     <label for="name">Name:</label>
     <input id="name" formControlName="name" type="text" />
-  
+
     <label for="name">Last Name:</label>
     <input id="lastName" formControlName="last_name" type="text" />
-    
+
     <label for="ID">ID:</label>
     <input id="ID" formControlName="id" type="text" />
-    
+
     <button type="submit">Add</button>
   </form>
-  
+
+
+  <ul>
+    <li *ngFor="let item of data">
+      <p><strong>ID:</strong> {{ item.id }}</p>
+      <p><strong>Name:</strong> {{ item.name }}</p>
+      <p><strong>Last Name:</strong> {{ item.last_name }}</p>
+      <p><strong>Serial:</strong> {{ item.serial }}</p>
+      <p><strong>Created At:</strong> {{ item.created_at }}</p>
+      <form enctype="multipart/form-data">
+        <input type="file" (change)="onFileSelected($event)" #fileInput>
+        <button type="submit" (click)="onSubmitUpload(item.name, item.last_name, item.serial)">Upload</button>
+      </form>
+    </li>
+
+  </ul>
+
+

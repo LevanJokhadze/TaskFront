@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { FormatTextPipe } from '../../pipes/format-text.pipe';
 
 const routes: Routes = [
   { path: '', component: MainComponent }
@@ -12,7 +13,8 @@ const routes: Routes = [
 @NgModule({
 
   declarations: [
-    MainComponent
+    MainComponent,
+    FormatTextPipe
   ],
   imports: [
     SharedModule,
